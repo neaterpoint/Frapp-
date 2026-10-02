@@ -7,7 +7,9 @@
 
 <p role="status">Current count: @currentCount</p>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<button class="rounded border border-brand-dark bg-brand px-3 py-1.5 text-white hover:bg-brand-dark
+               focus-visible:ring-4 focus-visible:ring-sky-400/60 focus-visible:outline-none"
+        @onclick="IncrementCount">Click me</button>
 
 @code {
     private int currentCount = 0;

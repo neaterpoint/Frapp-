@@ -13,23 +13,19 @@
 }
 else
 {
-    <table class="table">
+    <table class="mb-4 w-full text-left">
         <thead>
-            <tr>
-                <th>Date</th>
-                <th aria-label="Temperature in Celsius">Temp. (C)</th>
-                <th aria-label="Temperature in Fahrenheit">Temp. (F)</th>
-                <th>Summary</th>
+            <tr class="border-b-2 border-gray-300">
+                <th class="p-2">Date</th>
+                ...
             </tr>
         </thead>
         <tbody>
             @foreach (var forecast in forecasts)
             {
-                <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
+                <tr class="border-b border-gray-200">
+                    <td class="p-2">@forecast.Date.ToShortDateString()</td>
+                    ...
                 </tr>
             }
         </tbody>
