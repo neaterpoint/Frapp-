@@ -1,26 +1,49 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="relative flex flex-col sm:flex-row">
-    <div class="bg-linear-to-b from-[rgb(5,39,103)] to-[#3a0647] to-70% sm:sticky sm:top-0 sm:h-screen sm:w-[250px]">
-        <NavMenu />
-    </div>
+<div class="relative flex flex-col min-h-screen">
+    <main class="flex flex-col flex-1">
+        
+        <!-- NAVBAR CONTAINER: Clean structural utilities + our custom .main-navbar class -->
+        <div class="flex h-17 items-center justify-between px-4 sm:sticky sm:top-0 sm:z-10 sm:px-6 main-navbar">
+            
+            <AuthorizeView>
+                <Authorized>
+                    <!-- Left Side: Logged-in Home Logo -->
+                    @* TODO: change to logo *@
+                    <a href="/home" class="flex items-center gap-2 font-bold no-underline hover:opacity-90">
+                        <span>MyLogo (In)</span>
+                    </a>
 
-    <main class="flex-1">
-        <div class="flex h-14 items-center justify-between border-b border-[#d6d5d5] bg-[#f7f7f7] px-4
-                    sm:sticky sm:top-0 sm:z-10 sm:justify-end sm:pr-6 sm:pl-8">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank"
-               class="truncate whitespace-nowrap no-underline hover:underline sm:ml-6">About</a>
+                    <!-- Right Side: Profile Link -->
+                    <a href="/profile" class="flex items-center gap-2 text-sm font-medium no-underline hover:opacity-75">
+                        <span>Profile</span>
+                    </a>
+                </Authorized>
+
+                <NotAuthorized>
+                    <!-- Left Side: Logged-out Public Home Logo (Frappé text layout) -->
+                    <a href="/" class="flex items-center gap-2 font-black tracking-widest text-xl uppercase no-underline">
+                        <span>Frappé</span>
+                    </a>
+
+                    <!-- Right Side: Clean Nav Button links using your new CSS class -->
+                    <div class="flex items-center gap-3">
+                        <a href="/login" class="nav-btn">
+                            Login
+                        </a>
+                        <a href="/register" class="nav-btn">
+                            Register
+                        </a>
+                    </div>
+                </NotAuthorized>
+            </AuthorizeView>
+
         </div>
 
-        <article class="px-4 pt-[1.1rem] sm:pr-6 sm:pl-8">
+        <!-- MAIN APP BODY: Stripped of background utilities so it uses .main-content-body -->
+        <article class="flex-1 px-4 pt-[1.1rem] sm:pr-6 sm:pl-8 main-content-body">
             @Body
         </article>
-    </main>
-</div>
 
-<div id="blazor-error-ui" data-nosnippet
-     class="fixed bottom-0 left-0 z-[1000] hidden w-full bg-[lightyellow] px-5 pt-[0.6rem] pb-[0.7rem] shadow-[0_-1px_2px_rgba(0,0,0,0.2)] [color-scheme:light]">
-    An unhandled error has occurred.
-    <a href="." class="reload">Reload</a>
-    <span class="dismiss absolute top-2 right-3 cursor-pointer">🗙</span>
+    </main>
 </div>

@@ -1,0 +1,10 @@
+@inject NavigationManager NavigationManager
+
+@code {
+    protected override void OnInitialized()
+    {
+        // Instantly redirects the browser back to the "/" route
+        NavigationManager.NavigateTo("/", true);
+    }
+}
+y
