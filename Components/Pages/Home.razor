@@ -1,7 +1,24 @@
-﻿@page "/"
+﻿@page "/home"
+@attribute [Authorize]
 
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, World!</h1>
+<div class="feed-container">
+    
+    <div class="w-full max-w-xl mb-4 px-2">
+        <h2 class="text-3xl font-bold tracking-wider uppercase text-brand-brown">
+            Whatchu Brewin?
+        </h2>
+    </div>
 
-Welcome to your new app.
+    <div class="feed-card">
+        <div class="mb-6">
+            <h3 class="text-lg font-bold tracking-widest uppercase text-brand-brown/80 mb-4">
+                Today
+            </h3>
+            <!-- coffee item content/images go here -->
+        </div>
+
+    </div>
+
+</div>
