@@ -1,5 +1,11 @@
 ﻿<CascadingAuthenticationState>
-    <Router AppAssembly="typeof(Program).Assembly" NotFoundPage="typeof(Pages.NotFound)">
+    <Router AppAssembly="typeof(Program).Assembly">
+        <NotFound>
+            <PageTitle>Not found</PageTitle>
+            <LayoutView Layout="typeof(Layout.MainLayout)">
+                <p role="alert">Sorry, there's nothing at this address.</p>
+            </LayoutView>
+        </NotFound>
         <Found Context="routeData">
             <!-- Changed from RouteView to AuthorizeRouteView -->
             <AuthorizeRouteView RouteData="routeData" DefaultLayout="typeof(Layout.MainLayout)" />
